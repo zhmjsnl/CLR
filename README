@@ -1,0 +1,43 @@
+Environment:
+
+1. language: c++;
+2. cmake 3.15+;
+3. g++ 10.2.1+.
+
+Code organization:
+
+1. instance: Benchmark. Note that the cost in the instances P111112-P133222 is multiplied by 10;
+2. CMakeList.txt: Cmake file;
+3. constant.h: Some static variables;
+4. factory: Greedily open depots;
+5. graph: Read data from file and build weight matrix;
+6. main.cpp: Main file;
+7. ps: Path-Alg. See the paper for details;
+8. tour: Match and shortcut;
+9. ts: Tree-Alg. See the paper for details;
+10. tsp: Finding a tsp using 3/2 approximation algorithm;
+11. LKH: Exe file of LKH;
+12. par, tsp, tour: The necessary files for running LKH.
+
+Build and Execution:
+
+1. You can use g++ directly or cmake tools to compile and run,
+   before that please make sure your environment is linux/unix
+   and satisfy the minimum requirements.
+2. Using "mkdir build && cd build && cmake .. && make"
+   to generate executable file, i.e., clr.
+3. Before running clr, please place the LKH build (compiled) by your own computer in the folder.
+4. clr has four parameters:
+   the first is dataFileName. Please put dataFile in "instance" folder which is same directory as clr; 
+   the second is Alpha. See the paper for details of parameter Alpha. 
+   For using Alpha as an integer, we use Alpha*100 in our program; 
+   the third is usingLKH. 1/0 means that whether the tours are optimized by LKH or not;
+   the fourth is psLKH. 1/0 means that whether the Hamiltonian cycle is optimized by LKH or not.
+5. Execution: "./clr dataFileName Alpha*100 usingLKH psLKH", e.g., "./clr P111112 100 1 0",
+   where P111112 locates in "./instance/P111112" and it means that Alpha=1 and the tours are optimized by LKH
+   while the Hamiltonian cycle is not optimized by LKH.
+
+OutPut:
+
+1. The output of clr are "dataFileName Tree-AlgResult Path-AlgResult Time(ns)".
+   You can change it in "main.cpp" or other files.

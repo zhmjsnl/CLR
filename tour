@@ -1,0 +1,14 @@
+NAME : tsp.2857147.tour
+COMMENT : Length = 2857147
+COMMENT : Found by LKH-3 [Keld Helsgaun] Fri Jun 14 12:09:34 2024
+TYPE : TOUR
+DIMENSION : 6
+TOUR_SECTION
+1
+2
+3
+6
+5
+4
+-1
+EOF
